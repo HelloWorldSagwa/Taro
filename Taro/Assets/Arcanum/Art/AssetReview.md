@@ -19,6 +19,9 @@ Use this checklist before any generated image moves from `Incoming/` to `Approve
 - Generated-art hygiene: no fake text, watermarks, malformed hands, broken eyes, unusable borders, or warped tarot symbols.
 - Runtime readability: card face remains identifiable at in-game card size.
 - Alpha quality: no green fringe, missing hair strands, smoky edge holes, or semi-transparent border damage.
+- Korean UI safety: generated UI frames contain no baked Hangul, Latin letters, fake glyphs, tarot numbers, or illegible pseudo-writing.
+- 9-slice safety: button, dialogue, input, and panel frames have clean stretchable center/edge regions and ornament density concentrated in corners or caps.
+- Pipeline fit: main, profile creation, and tarot reading assets preserve their expected UI-safe zones and do not compete with runtime text.
 
 ## Naming
 
@@ -39,3 +42,15 @@ Use stable IDs before final art exists:
 - Avoid green glass, emerald jewelry, green candles, and green particles on transparent-needed assets.
 - After keying, inspect on black, white, violet, and checkerboard backgrounds.
 - Hair, lace, gold filigree, smoke, and translucent sleeves need manual edge-spill review.
+
+## Screen Pipeline Review Tags
+
+| Tag | Use when |
+|---|---|
+| `korean_text_unsafe` | Frame interior is too narrow/noisy for Hangul labels or dialogue. |
+| `baked_text` | Generated art contains real or fake letters, numbers, signatures, or logo-like marks. |
+| `bad_9slice` | Corners/caps/edges cannot stretch cleanly in Unity. |
+| `unsafe_lower_band` | Background has high-contrast detail behind the dialogue area. |
+| `master_crop_risk` | Luna's face, hair mass, hand, or sleeve silhouette will clip in the left column. |
+| `green_spill_risk` | Chroma-key asset uses green reflections, green particles, or green ornament colors. |
+| `button_state_mismatch` | Idle/hover/selected states do not read as one UI family. |

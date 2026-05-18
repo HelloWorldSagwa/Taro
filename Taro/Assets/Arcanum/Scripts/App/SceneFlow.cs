@@ -6,6 +6,8 @@ namespace Arcanum.App
     public static class SceneFlow
     {
         public const string Boot = "Boot";
+        public const string MainMenu = "MainMenu";
+        public const string ProfileCreate = "ProfileCreate";
         public const string HomeTable = "HomeTable";
         public const string Ritual = "Ritual";
         public const string ReadingResult = "ReadingResult";

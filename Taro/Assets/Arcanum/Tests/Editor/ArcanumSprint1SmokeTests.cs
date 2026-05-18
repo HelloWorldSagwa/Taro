@@ -1,5 +1,6 @@
 using System.Linq;
 using Arcanum.Data;
+using Arcanum.Profile;
 using Arcanum.Reading;
 using NUnit.Framework;
 using UnityEditor;
@@ -12,6 +13,8 @@ namespace Arcanum.Tests.Editor
         private static readonly string[] RequiredScenePaths =
         {
             "Assets/Arcanum/Scenes/Boot.unity",
+            "Assets/Arcanum/Scenes/MainMenu.unity",
+            "Assets/Arcanum/Scenes/ProfileCreate.unity",
             "Assets/Arcanum/Scenes/HomeTable.unity",
             "Assets/Arcanum/Scenes/Ritual.unity",
             "Assets/Arcanum/Scenes/ReadingResult.unity"
@@ -87,6 +90,20 @@ namespace Arcanum.Tests.Editor
             Assert.That(ReadingSession.SelectedCard, Is.SameAs(fallback));
             Assert.That(ReadingSession.SelectedCardId, Is.EqualTo(fallback.CardId));
             ReadingSession.Clear();
+        }
+
+        [Test]
+        public void ProfileSession_DefaultsKeepKoreanFallbacks()
+        {
+            ProfileSession.Clear();
+
+            var profile = ProfileSession.Create(string.Empty, string.Empty, string.Empty);
+
+            Assert.That(profile.SafeDisplayName, Is.EqualTo("\uC190\uB2D8"));
+            Assert.That(profile.SafeBirthMonth, Is.EqualTo("\uBBF8\uC785\uB825"));
+            Assert.That(profile.SafeFocus, Is.EqualTo("\uC624\uB298\uC758 \uD750\uB984"));
+            Assert.That(ProfileSession.HasProfile, Is.True);
+            ProfileSession.Clear();
         }
 
         [Test]

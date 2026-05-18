@@ -7,7 +7,7 @@ namespace Arcanum.App
         private void Start()
         {
             AppShell.EnsureInitialized();
-            SceneFlow.Load(SceneFlow.HomeTable);
+            SceneFlow.Load(SceneFlow.MainMenu);
         }
     }
 }

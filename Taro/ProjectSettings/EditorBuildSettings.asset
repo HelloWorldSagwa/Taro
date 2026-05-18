@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Arcanum/Scenes/Boot.unity
     guid: 9ef046870c189294d9b4b815fca60bd5
   - enabled: 1
+    path: Assets/Arcanum/Scenes/MainMenu.unity
+    guid: 2f1c0ef40b36433198431aa850ef40ab
+  - enabled: 1
+    path: Assets/Arcanum/Scenes/ProfileCreate.unity
+    guid: c7cf74b995f2462dab1c103c1ca984dc
+  - enabled: 1
     path: Assets/Arcanum/Scenes/HomeTable.unity
     guid: a646039be4bb89646a14b1b1d3dcc448
   - enabled: 1

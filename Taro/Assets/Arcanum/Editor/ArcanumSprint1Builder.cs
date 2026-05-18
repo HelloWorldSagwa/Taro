@@ -26,6 +26,8 @@ namespace Arcanum.EditorTools
             PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Standalone, "com.HelloWorldSagwa.ArcanumStage");
 
             var bootScenePath = CreateScene("Boot", typeof(BootController));
+            var mainMenuScenePath = CreateScene("MainMenu", typeof(MainMenuController));
+            var profileCreateScenePath = CreateScene("ProfileCreate", typeof(ProfileCreateController));
             var homeTableScenePath = CreateScene("HomeTable", typeof(HomeTableController));
             var ritualScenePath = CreateScene("Ritual", typeof(RitualController));
             var readingResultScenePath = CreateScene("ReadingResult", typeof(ReadingResultController));
@@ -36,6 +38,8 @@ namespace Arcanum.EditorTools
             EditorBuildSettings.scenes = new[]
             {
                 CreateBuildSettingsScene(bootScenePath),
+                CreateBuildSettingsScene(mainMenuScenePath),
+                CreateBuildSettingsScene(profileCreateScenePath),
                 CreateBuildSettingsScene(homeTableScenePath),
                 CreateBuildSettingsScene(ritualScenePath),
                 CreateBuildSettingsScene(readingResultScenePath)

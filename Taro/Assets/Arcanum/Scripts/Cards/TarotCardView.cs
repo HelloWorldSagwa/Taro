@@ -38,12 +38,12 @@ namespace Arcanum.Cards
 
             if (title != null)
             {
-                title.text = IsRevealed && hasCard ? Card.DisplayName : "ARCANUM";
+                title.text = IsRevealed && hasCard ? Card.DisplayName : "\uC544\uB974\uCE74\uB214";
             }
 
             if (subtitle != null)
             {
-                subtitle.text = IsRevealed && hasCard ? $"Major {Card.Number:00}" : "Click to reveal";
+                subtitle.text = IsRevealed && hasCard ? $"\uBA54\uC774\uC800 {Card.Number:00}" : "\uC120\uD0DD\uD574\uC11C \uC5F4\uAE30";
             }
         }
 

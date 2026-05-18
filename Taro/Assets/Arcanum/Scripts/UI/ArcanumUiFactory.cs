@@ -107,7 +107,7 @@ namespace Arcanum.UI
             lineText.verticalOverflow = VerticalWrapMode.Overflow;
             Stretch(lineText.rectTransform, 44, 20, -44, -42);
 
-            var prompt = CreateText(dialogue, "AdvanceHint", "CLICK: finish line", 17, TextAnchor.MiddleRight, new Color(0.68f, 0.62f, 0.78f, 0.9f));
+            var prompt = CreateText(dialogue, "AdvanceHint", "클릭: 문장 바로 보기", 17, TextAnchor.MiddleRight, new Color(0.68f, 0.62f, 0.78f, 0.9f));
             prompt.rectTransform.anchorMin = new Vector2(0.72f, 0.05f);
             prompt.rectTransform.anchorMax = new Vector2(0.97f, 0.22f);
             prompt.rectTransform.offsetMin = Vector2.zero;
