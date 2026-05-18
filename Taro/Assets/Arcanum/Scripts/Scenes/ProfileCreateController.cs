@@ -25,10 +25,10 @@ namespace Arcanum.Scenes
 
             initialized = true;
             var canvas = ArcanumUiFactory.CreateCanvas("ProfileCreateCanvas");
-            ArcanumUiFactory.CreatePanel(canvas.transform, "Background", Vector2.zero, Vector2.one, ArcanumUiFactory.StageBlack);
+            ArcanumUiFactory.CreateBackground(canvas.transform, "BG_PROFILE_ATELIER_16X9");
             TarotMasterPresenter.Create(canvas.GetComponent<RectTransform>()).SetExpression("focused");
 
-            var panel = ArcanumUiFactory.CreatePanel(canvas.transform, "Center_ProfileForm", ArcanumUiFactory.CenterColumnAnchorMin, ArcanumUiFactory.CenterColumnAnchorMax, ArcanumUiFactory.PanelGlass);
+            var panel = ArcanumUiFactory.CreateProfilePanel(canvas.transform, "Center_ProfileForm", ArcanumUiFactory.CenterColumnAnchorMin, ArcanumUiFactory.CenterColumnAnchorMax);
             var title = ArcanumUiFactory.CreateText(panel, "Title", "상담 프로필", 44, TextAnchor.MiddleCenter, ArcanumUiFactory.Gold);
             title.rectTransform.anchorMin = new Vector2(0.08f, 0.84f);
             title.rectTransform.anchorMax = new Vector2(0.92f, 0.95f);
@@ -67,7 +67,7 @@ namespace Arcanum.Scenes
 
             var inputObject = new GameObject(name + "Input", typeof(RectTransform), typeof(Image), typeof(InputField));
             inputObject.transform.SetParent(parent, false);
-            inputObject.GetComponent<Image>().color = new Color(0.13f, 0.10f, 0.18f, 0.98f);
+            ArcanumUiFactory.ApplyInputSkin(inputObject.GetComponent<Image>());
 
             var rect = inputObject.GetComponent<RectTransform>();
             rect.anchorMin = new Vector2(0.12f, y);
@@ -91,7 +91,7 @@ namespace Arcanum.Scenes
 
         private static void CreateGuidePanel(Transform parent)
         {
-            var right = ArcanumUiFactory.CreatePanel(parent, "Right_ProfilePanel", ArcanumUiFactory.RightColumnAnchorMin, ArcanumUiFactory.RightColumnAnchorMax, new Color(0.08f, 0.055f, 0.12f, 0.96f));
+            var right = ArcanumUiFactory.CreateRightPanel(parent, "Right_ProfilePanel");
             var title = ArcanumUiFactory.CreateText(right, "GuideTitle", "입장 준비", 29, TextAnchor.MiddleCenter, ArcanumUiFactory.Gold);
             title.rectTransform.anchorMin = new Vector2(0.08f, 0.80f);
             title.rectTransform.anchorMax = new Vector2(0.92f, 0.92f);

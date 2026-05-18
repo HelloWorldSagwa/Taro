@@ -31,11 +31,12 @@ namespace Arcanum.Scenes
             var card = ReadingSession.EnsureSelectionOrTodayCard();
             var profile = ProfileSession.Current;
             var canvas = ArcanumUiFactory.CreateCanvas("ReadingResultCanvas");
-            ArcanumUiFactory.CreatePanel(canvas.transform, "Background", Vector2.zero, Vector2.one, ArcanumUiFactory.StageBlack);
+            ArcanumUiFactory.CreateBackground(canvas.transform, "BG_RESULT_DAILY_TABLE_16X9");
             var master = TarotMasterPresenter.Create(canvas.GetComponent<RectTransform>());
             master.PlayResultEmphasis();
 
-            var cardPanel = ArcanumUiFactory.CreatePanel(canvas.transform, "Center_SelectedCardStage", ArcanumUiFactory.CenterColumnAnchorMin, ArcanumUiFactory.CenterColumnAnchorMax, ArcanumUiFactory.PanelGlass);
+            var cardPanel = ArcanumUiFactory.CreateProfilePanel(canvas.transform, "Center_SelectedCardStage", ArcanumUiFactory.CenterColumnAnchorMin, ArcanumUiFactory.CenterColumnAnchorMax);
+            CreateRevealFx(cardPanel);
             var cardView = TarotCardView.Create(cardPanel, card, true);
             var cardRect = cardView.GetComponent<RectTransform>();
             cardRect.anchorMin = new Vector2(0.31f, 0.18f);
@@ -49,7 +50,7 @@ namespace Arcanum.Scenes
             stageLabel.rectTransform.offsetMin = Vector2.zero;
             stageLabel.rectTransform.offsetMax = Vector2.zero;
 
-            var right = ArcanumUiFactory.CreatePanel(canvas.transform, "Right_ResultPanel", ArcanumUiFactory.RightColumnAnchorMin, ArcanumUiFactory.RightColumnAnchorMax, new Color(0.08f, 0.055f, 0.12f, 0.96f));
+            var right = ArcanumUiFactory.CreateRightPanel(canvas.transform, "Right_ResultPanel");
             var title = ArcanumUiFactory.CreateText(right, "CardTitle", card.DisplayName, 34, TextAnchor.MiddleCenter, ArcanumUiFactory.Gold);
             title.rectTransform.anchorMin = new Vector2(0.08f, 0.80f);
             title.rectTransform.anchorMax = new Vector2(0.92f, 0.92f);
@@ -69,7 +70,7 @@ namespace Arcanum.Scenes
             message.rectTransform.offsetMin = Vector2.zero;
             message.rectTransform.offsetMax = Vector2.zero;
 
-            var restart = ArcanumUiFactory.CreateButton(right, "BackButton", "테이블로 돌아가기", new Color(0.32f, 0.2f, 0.45f));
+            var restart = ArcanumUiFactory.CreateSecondaryButton(right, "BackButton", "테이블로 돌아가기");
             var restartRect = restart.GetComponent<RectTransform>();
             restartRect.anchorMin = new Vector2(0.16f, 0.07f);
             restartRect.anchorMax = new Vector2(0.84f, 0.17f);
@@ -78,6 +79,22 @@ namespace Arcanum.Scenes
             restart.onClick.AddListener(() => SceneFlow.Load(SceneFlow.HomeTable));
 
             CreateDialogue(canvas.transform, card.MasterLine);
+        }
+
+        private static void CreateRevealFx(RectTransform parent)
+        {
+            var fxObject = new GameObject("CardRevealFx", typeof(RectTransform), typeof(Image));
+            fxObject.transform.SetParent(parent, false);
+            var rect = fxObject.GetComponent<RectTransform>();
+            rect.anchorMin = new Vector2(0.18f, 0.07f);
+            rect.anchorMax = new Vector2(0.82f, 0.88f);
+            rect.offsetMin = Vector2.zero;
+            rect.offsetMax = Vector2.zero;
+
+            var image = fxObject.GetComponent<Image>();
+            image.raycastTarget = false;
+            image.preserveAspect = true;
+            ArcanumUiFactory.ApplySprite(image, "Art/FX/FX_CARD_REVEAL_GOLD_SMOKE", new Color(1f, 0.72f, 0.26f, 0.35f));
         }
 
         private void CreateDialogue(Transform parent, string line)

@@ -20,11 +20,11 @@ namespace Arcanum.Scenes
 
             initialized = true;
             var canvas = ArcanumUiFactory.CreateCanvas("MainMenuCanvas");
-            ArcanumUiFactory.CreatePanel(canvas.transform, "Background", Vector2.zero, Vector2.one, ArcanumUiFactory.StageBlack);
+            ArcanumUiFactory.CreateBackground(canvas.transform, "BG_MAIN_MENU_16X9");
             TarotMasterPresenter.Create(canvas.GetComponent<RectTransform>()).SetExpression("waiting");
 
             var profile = ProfileSession.Current;
-            var panel = ArcanumUiFactory.CreatePanel(canvas.transform, "Center_MainMenu", ArcanumUiFactory.CenterColumnAnchorMin, ArcanumUiFactory.CenterColumnAnchorMax, ArcanumUiFactory.PanelGlass);
+            var panel = ArcanumUiFactory.CreateProfilePanel(canvas.transform, "Center_MainMenu", ArcanumUiFactory.CenterColumnAnchorMin, ArcanumUiFactory.CenterColumnAnchorMax);
             var title = ArcanumUiFactory.CreateText(panel, "Title", "아르카눔 스테이지", 50, TextAnchor.MiddleCenter, ArcanumUiFactory.Gold);
             title.rectTransform.anchorMin = new Vector2(0.06f, 0.74f);
             title.rectTransform.anchorMax = new Vector2(0.94f, 0.91f);
@@ -48,7 +48,7 @@ namespace Arcanum.Scenes
             startRect.offsetMax = Vector2.zero;
             start.onClick.AddListener(() => SceneFlow.Load(profile == null ? SceneFlow.ProfileCreate : SceneFlow.HomeTable));
 
-            var newProfile = ArcanumUiFactory.CreateButton(panel, "NewProfileButton", "새 프로필로 시작", new Color(0.32f, 0.2f, 0.45f));
+            var newProfile = ArcanumUiFactory.CreateSecondaryButton(panel, "NewProfileButton", "새 프로필로 시작");
             var newProfileRect = newProfile.GetComponent<RectTransform>();
             newProfileRect.anchorMin = new Vector2(0.20f, 0.18f);
             newProfileRect.anchorMax = new Vector2(0.80f, 0.30f);
@@ -67,7 +67,7 @@ namespace Arcanum.Scenes
 
         private static void CreateInfoPanel(Transform parent, ProfileData profile)
         {
-            var right = ArcanumUiFactory.CreatePanel(parent, "Right_MenuPanel", ArcanumUiFactory.RightColumnAnchorMin, ArcanumUiFactory.RightColumnAnchorMax, new Color(0.08f, 0.055f, 0.12f, 0.96f));
+            var right = ArcanumUiFactory.CreateRightPanel(parent, "Right_MenuPanel");
             var title = ArcanumUiFactory.CreateText(right, "GuideTitle", "오늘의 입장", 29, TextAnchor.MiddleCenter, ArcanumUiFactory.Gold);
             title.rectTransform.anchorMin = new Vector2(0.08f, 0.80f);
             title.rectTransform.anchorMax = new Vector2(0.92f, 0.92f);

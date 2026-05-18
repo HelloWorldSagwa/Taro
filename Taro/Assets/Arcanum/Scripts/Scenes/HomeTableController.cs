@@ -20,14 +20,14 @@ namespace Arcanum.Scenes
 
             initialized = true;
             var canvas = ArcanumUiFactory.CreateCanvas("HomeTableCanvas");
-            ArcanumUiFactory.CreatePanel(canvas.transform, "Background", Vector2.zero, Vector2.one, ArcanumUiFactory.StageBlack);
+            ArcanumUiFactory.CreateBackground(canvas.transform, "BG_HOME_TABLE_16X9");
             TarotMasterPresenter.Create(canvas.GetComponent<RectTransform>()).SetExpression("waiting");
 
             var profile = ProfileSession.Current;
             var displayName = profile == null ? "손님" : profile.SafeDisplayName;
             var focus = profile == null ? "오늘의 흐름" : profile.SafeFocus;
 
-            var table = ArcanumUiFactory.CreatePanel(canvas.transform, "Center_CardTable", ArcanumUiFactory.CenterColumnAnchorMin, ArcanumUiFactory.CenterColumnAnchorMax, ArcanumUiFactory.PanelGlass);
+            var table = ArcanumUiFactory.CreateProfilePanel(canvas.transform, "Center_CardTable", ArcanumUiFactory.CenterColumnAnchorMin, ArcanumUiFactory.CenterColumnAnchorMax);
             var title = ArcanumUiFactory.CreateText(table, "Title", "타로 테이블", 52, TextAnchor.MiddleCenter, ArcanumUiFactory.Gold);
             title.rectTransform.anchorMin = new Vector2(0.06f, 0.73f);
             title.rectTransform.anchorMax = new Vector2(0.94f, 0.91f);
@@ -54,7 +54,7 @@ namespace Arcanum.Scenes
 
         private static void CreateGuidePanel(Transform parent)
         {
-            var right = ArcanumUiFactory.CreatePanel(parent, "Right_SessionPanel", ArcanumUiFactory.RightColumnAnchorMin, ArcanumUiFactory.RightColumnAnchorMax, new Color(0.08f, 0.055f, 0.12f, 0.96f));
+            var right = ArcanumUiFactory.CreateRightPanel(parent, "Right_SessionPanel");
             var title = ArcanumUiFactory.CreateText(right, "GuideTitle", "오늘의 리딩", 29, TextAnchor.MiddleCenter, ArcanumUiFactory.Gold);
             title.rectTransform.anchorMin = new Vector2(0.08f, 0.80f);
             title.rectTransform.anchorMax = new Vector2(0.92f, 0.92f);

@@ -25,6 +25,14 @@ namespace Arcanum.UI
         public static readonly Vector2 RightColumnAnchorMin = new Vector2(0.745f, 0.235f);
         public static readonly Vector2 RightColumnAnchorMax = new Vector2(0.975f, 0.955f);
 
+        private const string PrimaryButtonSprite = "Art/UI/UI_BUTTON_PRIMARY_GOLD_IDLE";
+        private const string SecondaryButtonSprite = "Art/UI/UI_BUTTON_SECONDARY_GLASS_IDLE";
+        private const string DialogueBoxSprite = "Art/UI/UI_DIALOGUE_BOX_JRPG_9SLICE";
+        private const string NameplateSprite = "Art/UI/UI_NAMEPLATE_MASTER_KO_9SLICE";
+        private const string RightPanelSprite = "Art/UI/UI_PANEL_RIGHT_RESULT_9SLICE";
+        private const string ProfilePanelSprite = "Art/UI/UI_PANEL_PROFILE_FORM_9SLICE";
+        private const string InputSprite = "Art/UI/UI_INPUT_NAMEPLATE_KO_9SLICE";
+
         public static Canvas CreateCanvas(string name)
         {
             EnsureEventSystem();
@@ -41,6 +49,14 @@ namespace Arcanum.UI
             return canvas;
         }
 
+        public static RectTransform CreateBackground(Transform parent, string assetName)
+        {
+            var background = CreatePanel(parent, "Background", Vector2.zero, Vector2.one, StageBlack);
+            ApplySprite(background.GetComponent<Image>(), $"Art/Backgrounds/{assetName}", Color.white);
+            background.SetAsFirstSibling();
+            return background;
+        }
+
         public static RectTransform CreatePanel(Transform parent, string name, Vector2 anchorMin, Vector2 anchorMax, Color color)
         {
             var panel = new GameObject(name, typeof(RectTransform), typeof(Image));
@@ -54,6 +70,23 @@ namespace Arcanum.UI
 
             panel.GetComponent<Image>().color = color;
             return rect;
+        }
+
+        public static RectTransform CreateSkinnedPanel(Transform parent, string name, Vector2 anchorMin, Vector2 anchorMax, Color fallbackColor, string resourcePath)
+        {
+            var panel = CreatePanel(parent, name, anchorMin, anchorMax, fallbackColor);
+            ApplySprite(panel.GetComponent<Image>(), resourcePath, Color.white);
+            return panel;
+        }
+
+        public static RectTransform CreateRightPanel(Transform parent, string name)
+        {
+            return CreateSkinnedPanel(parent, name, RightColumnAnchorMin, RightColumnAnchorMax, new Color(0.08f, 0.055f, 0.12f, 0.96f), RightPanelSprite);
+        }
+
+        public static RectTransform CreateProfilePanel(Transform parent, string name, Vector2 anchorMin, Vector2 anchorMax)
+        {
+            return CreateSkinnedPanel(parent, name, anchorMin, anchorMax, PanelGlass, ProfilePanelSprite);
         }
 
         public static Text CreateText(Transform parent, string name, string value, int fontSize, TextAnchor anchor, Color color)
@@ -77,9 +110,19 @@ namespace Arcanum.UI
 
         public static Button CreateButton(Transform parent, string name, string label, Color color)
         {
+            return CreateButton(parent, name, label, color, PrimaryButtonSprite);
+        }
+
+        public static Button CreateSecondaryButton(Transform parent, string name, string label)
+        {
+            return CreateButton(parent, name, label, new Color(0.32f, 0.2f, 0.45f), SecondaryButtonSprite);
+        }
+
+        private static Button CreateButton(Transform parent, string name, string label, Color color, string spritePath)
+        {
             var buttonObject = new GameObject(name, typeof(RectTransform), typeof(Image), typeof(Button));
             buttonObject.transform.SetParent(parent, false);
-            buttonObject.GetComponent<Image>().color = color;
+            ApplySprite(buttonObject.GetComponent<Image>(), spritePath, color);
 
             var button = buttonObject.GetComponent<Button>();
             var colors = button.colors;
@@ -96,8 +139,10 @@ namespace Arcanum.UI
         public static RectTransform CreateDialogueBox(Transform parent, string speaker, string line, out Text lineText)
         {
             var dialogue = CreatePanel(parent, "DialogueBox", DialogueAnchorMin, DialogueAnchorMax, DialogueBlack);
+            ApplySprite(dialogue.GetComponent<Image>(), DialogueBoxSprite, Color.white);
 
             var namePlate = CreatePanel(dialogue, "SpeakerPlate", new Vector2(0.03f, 0.68f), new Vector2(0.18f, 0.94f), new Color(0.18f, 0.12f, 0.25f, 0.98f));
+            ApplySprite(namePlate.GetComponent<Image>(), NameplateSprite, Color.white);
             var speakerText = CreateText(namePlate, "Speaker", speaker, 21, TextAnchor.MiddleCenter, Gold);
             Stretch(speakerText.rectTransform, 10, 2, -10, -2);
 
@@ -125,6 +170,53 @@ namespace Arcanum.UI
             clickTarget.onClick.AddListener(runner.Complete);
 
             return dialogue;
+        }
+
+        public static void ApplyInputSkin(Image image)
+        {
+            ApplySprite(image, InputSprite, new Color(0.13f, 0.10f, 0.18f, 0.98f));
+        }
+
+        public static void ApplySprite(Image image, string resourcePath, Color fallbackColor)
+        {
+            if (image == null)
+            {
+                return;
+            }
+
+            var sprite = LoadSprite(resourcePath);
+            if (sprite == null)
+            {
+                image.sprite = null;
+                image.color = fallbackColor;
+                return;
+            }
+
+            image.sprite = sprite;
+            image.color = Color.white;
+            image.preserveAspect = false;
+        }
+
+        public static Sprite LoadSprite(string resourcePath)
+        {
+            if (string.IsNullOrEmpty(resourcePath))
+            {
+                return null;
+            }
+
+            var sprite = Resources.Load<Sprite>(resourcePath);
+            if (sprite != null)
+            {
+                return sprite;
+            }
+
+            var texture = Resources.Load<Texture2D>(resourcePath);
+            if (texture == null)
+            {
+                return null;
+            }
+
+            return Sprite.Create(texture, new Rect(0f, 0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100f);
         }
 
         public static void Stretch(RectTransform rect, float left, float bottom, float right, float top)

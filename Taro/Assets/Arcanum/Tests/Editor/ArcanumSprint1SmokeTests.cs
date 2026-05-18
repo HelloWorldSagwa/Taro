@@ -35,6 +35,33 @@ namespace Arcanum.Tests.Editor
             "FX_MASTER_AURA_REVEAL"
         };
 
+        private static readonly string[] RequiredRuntimeArtResourcePaths =
+        {
+            "Art/Backgrounds/BG_MAIN_MENU_16X9",
+            "Art/Backgrounds/BG_PROFILE_ATELIER_16X9",
+            "Art/Backgrounds/BG_HOME_TABLE_16X9",
+            "Art/Backgrounds/BG_RITUAL_DAILY_TABLE_16X9",
+            "Art/Backgrounds/BG_RESULT_DAILY_TABLE_16X9",
+            "Art/Cards/CARD_BACK_DEFAULT",
+            "Art/Cards/CARD_MAJOR_00_FOOL_FACE",
+            "Art/Cards/CARD_MAJOR_01_MAGICIAN_FACE",
+            "Art/Cards/CARD_MAJOR_06_LOVERS_FACE",
+            "Art/Cards/CARD_MAJOR_13_DEATH_FACE",
+            "Art/Cards/CARD_MAJOR_18_MOON_FACE",
+            "Art/Cards/CARD_MAJOR_21_WORLD_FACE",
+            "Art/Cards/FRAME_TAROT_DEFAULT",
+            "Art/UI/UI_DIALOGUE_BOX_JRPG_9SLICE",
+            "Art/UI/UI_NAMEPLATE_MASTER_KO_9SLICE",
+            "Art/UI/UI_BUTTON_PRIMARY_GOLD_IDLE",
+            "Art/UI/UI_BUTTON_SECONDARY_GLASS_IDLE",
+            "Art/UI/UI_PANEL_RIGHT_RESULT_9SLICE",
+            "Art/UI/UI_PANEL_PROFILE_FORM_9SLICE",
+            "Art/UI/UI_INPUT_NAMEPLATE_KO_9SLICE",
+            "Art/FX/FX_CARD_REVEAL_GOLD_SMOKE",
+            "Art/FX/FX_CARD_HOVER_GLOW",
+            "Art/FX/FX_MAGIC_CIRCLE_DAILY"
+        };
+
         [Test]
         public void PrototypeTarotDeck_ContainsSixCards()
         {
@@ -186,6 +213,15 @@ namespace Arcanum.Tests.Editor
             foreach (var assetName in RequiredTarotMasterMotionResourceNames)
             {
                 Assert.That(readme.text, Does.Contain(assetName), $"{assetName} must be documented for the GPT-Image-2 import pass.");
+            }
+        }
+
+        [Test]
+        public void RequiredRuntimeArtResources_LoadFromResources()
+        {
+            foreach (var resourcePath in RequiredRuntimeArtResourcePaths)
+            {
+                Assert.That(ArcanumUiFactory.LoadSprite(resourcePath), Is.Not.Null, resourcePath);
             }
         }
 

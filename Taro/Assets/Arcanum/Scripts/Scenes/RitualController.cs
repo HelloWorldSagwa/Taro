@@ -36,11 +36,12 @@ namespace Arcanum.Scenes
             }
 
             var canvas = ArcanumUiFactory.CreateCanvas("RitualCanvas");
-            ArcanumUiFactory.CreatePanel(canvas.transform, "Background", Vector2.zero, Vector2.one, ArcanumUiFactory.StageBlack);
+            ArcanumUiFactory.CreateBackground(canvas.transform, "BG_RITUAL_DAILY_TABLE_16X9");
             masterPresenter = TarotMasterPresenter.Create(canvas.GetComponent<RectTransform>());
             masterPresenter.SetExpression("focused");
 
-            var table = ArcanumUiFactory.CreatePanel(canvas.transform, "Center_CardTable", ArcanumUiFactory.CenterColumnAnchorMin, ArcanumUiFactory.CenterColumnAnchorMax, ArcanumUiFactory.PanelGlass);
+            var table = ArcanumUiFactory.CreateProfilePanel(canvas.transform, "Center_CardTable", ArcanumUiFactory.CenterColumnAnchorMin, ArcanumUiFactory.CenterColumnAnchorMax);
+            CreateMagicCircle(table);
             promptText = ArcanumUiFactory.CreateText(table, "Prompt", "\uC2DC\uC120\uC774 \uBA38\uBB34\uB294 \uCE74\uB4DC\uB97C \uC120\uD0DD\uD558\uC138\uC694", 34, TextAnchor.MiddleCenter, ArcanumUiFactory.Gold);
             promptText.rectTransform.anchorMin = new Vector2(0.06f, 0.85f);
             promptText.rectTransform.anchorMax = new Vector2(0.94f, 0.95f);
@@ -54,7 +55,7 @@ namespace Arcanum.Scenes
 
         private void CreateGuidancePanel(Transform parent)
         {
-            var right = ArcanumUiFactory.CreatePanel(parent, "Right_RitualPanel", ArcanumUiFactory.RightColumnAnchorMin, ArcanumUiFactory.RightColumnAnchorMax, new Color(0.08f, 0.055f, 0.12f, 0.96f));
+            var right = ArcanumUiFactory.CreateRightPanel(parent, "Right_RitualPanel");
 
             var title = ArcanumUiFactory.CreateText(right, "GuideTitle", "\uCE74\uB4DC \uD14C\uC774\uBE14", 29, TextAnchor.MiddleCenter, ArcanumUiFactory.Gold);
             title.rectTransform.anchorMin = new Vector2(0.08f, 0.80f);
@@ -67,6 +68,22 @@ namespace Arcanum.Scenes
             guidanceText.rectTransform.anchorMax = new Vector2(0.90f, 0.74f);
             guidanceText.rectTransform.offsetMin = Vector2.zero;
             guidanceText.rectTransform.offsetMax = Vector2.zero;
+        }
+
+        private static void CreateMagicCircle(RectTransform table)
+        {
+            var circleObject = new GameObject("DailyMagicCircle", typeof(RectTransform), typeof(Image));
+            circleObject.transform.SetParent(table, false);
+            var rect = circleObject.GetComponent<RectTransform>();
+            rect.anchorMin = new Vector2(0.11f, 0.11f);
+            rect.anchorMax = new Vector2(0.89f, 0.82f);
+            rect.offsetMin = Vector2.zero;
+            rect.offsetMax = Vector2.zero;
+
+            var image = circleObject.GetComponent<Image>();
+            image.raycastTarget = false;
+            image.preserveAspect = true;
+            ArcanumUiFactory.ApplySprite(image, "Art/FX/FX_MAGIC_CIRCLE_DAILY", new Color(1f, 0.75f, 0.25f, 0.20f));
         }
 
         private void CreateCards(RectTransform table)
