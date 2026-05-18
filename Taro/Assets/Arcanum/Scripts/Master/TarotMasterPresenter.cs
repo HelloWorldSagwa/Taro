@@ -96,10 +96,10 @@ namespace Arcanum.Master
                 return;
             }
 
-            var sprite = Resources.Load<Sprite>(MasterResourceRoot + AssetNameForToken(token));
+            var sprite = LoadMasterSprite(AssetNameForToken(token));
             if (sprite == null && string.Equals(token, "speaking", System.StringComparison.Ordinal))
             {
-                sprite = Resources.Load<Sprite>(MasterResourceRoot + AssetNameForToken(tokenBeforeSpeaking));
+                sprite = LoadMasterSprite(AssetNameForToken(tokenBeforeSpeaking));
             }
 
             if (sprite == null)
@@ -141,7 +141,7 @@ namespace Arcanum.Master
             var spriteName = string.Equals(token, "reveal", System.StringComparison.Ordinal)
                 ? "FX_MASTER_AURA_REVEAL"
                 : "FX_MASTER_AURA_IDLE";
-            var sprite = Resources.Load<Sprite>(MasterResourceRoot + spriteName);
+            var sprite = LoadMasterSprite(spriteName);
             if (sprite != null)
             {
                 auraImage.sprite = sprite;
@@ -251,6 +251,24 @@ namespace Arcanum.Master
                 default:
                     return "MASTER_LUNA_IDLE_CALM";
             }
+        }
+
+        private static Sprite LoadMasterSprite(string assetName)
+        {
+            var resourcePath = MasterResourceRoot + assetName;
+            var sprite = Resources.Load<Sprite>(resourcePath);
+            if (sprite != null)
+            {
+                return sprite;
+            }
+
+            var texture = Resources.Load<Texture2D>(resourcePath);
+            if (texture == null)
+            {
+                return null;
+            }
+
+            return Sprite.Create(texture, new Rect(0f, 0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100f);
         }
 
         private static bool IsListeningToken(string token)
