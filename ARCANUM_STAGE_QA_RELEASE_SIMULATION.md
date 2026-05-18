@@ -278,7 +278,8 @@ MVP 필수 이벤트는 다음 순서와 속성으로 검증한다.
 
 | 보완 항목 | 현재 상태 | 필요한 결정 |
 |---|---|---|
-| Unity 버전 | Unity 6000.0.43f1 (Unity 6.0 LTS)로 확정 | 현재 로컬 Unity Hub 설치 가능 버전 기준. 프로젝트 생성/빌드/QA 모두 동일 버전 고정 |
+| Unity 버전 | Unity 6000.3.15f1 (Unity 6.3 LTS)로 확정 | 현재 로컬 Unity Hub 설치 확인. 프로젝트 생성/빌드/QA 모두 동일 버전 고정 |
+| Unity 템플릿 | Universal 2D로 확정 | 2D URP, 모바일 세로형, 카드/캐릭터/파티클 QA 기준 고정 |
 | UI 프레임워크 | uGUI로 확정 | 모바일 세로형 safe area, 대사창, 카드 보드 기준 고정 |
 | 최소 지원 OS/기기 | 미정 | Android/iOS 최소 버전, RAM 기준 |
 | 성능 예산 | 30fps 방어, 60fps 목표 | draw call, texture memory, bundle size 기준 |

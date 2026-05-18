@@ -12,8 +12,10 @@
 ## Locked Decisions
 
 - Engine: Unity
-- Editor: Unity 6000.0.43f1 (Unity 6.0 LTS)
+- Editor: Unity 6000.3.15f1 (Unity 6.3 LTS)
+- Unity template: Universal 2D
 - Rendering: 2D URP for MVP
+- Unity MCP: AnkleBreaker Unity MCP, bridge port `7890`
 - UI: uGUI for MVP
 - Client language: C#
 - Server: TypeScript + NestJS

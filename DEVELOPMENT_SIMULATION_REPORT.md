@@ -50,9 +50,11 @@ MVP에서 제외할 것:
 | 항목 | 결정 |
 |---|---|
 | 게임 엔진 | Unity LTS |
-| 에디터 버전 | Unity 6000.0.43f1 (Unity 6.0 LTS) |
+| 에디터 버전 | Unity 6000.3.15f1 (Unity 6.3 LTS) |
+| 프로젝트 템플릿 | Universal 2D |
 | 언어 | C# |
-| 렌더링 | 2D URP |
+| 렌더링 | 2D URP. MVP는 2D 확정, 3D는 Phase 3 이후 제한 검토 |
+| Unity MCP | AnkleBreaker Unity MCP, localhost bridge `7890` |
 | UI | MVP는 uGUI 권장 |
 | 애니메이션 | MVP는 Sprite swap + Animator + Tween |
 | 캐릭터 고도화 | Phase 3 이후 Live2D Cubism SDK 또는 Spine 검토 |
