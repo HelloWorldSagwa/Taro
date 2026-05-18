@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: db29a94250f1df34aa5d28e7d24c765c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1521559162526902525
+    second: FX_CANDLE_DUST_LOOP_0
+  - first:
+      213: 8602220589210705973
+    second: FX_CANDLE_DUST_LOOP_1
+  - first:
+      213: 3131541539827429592
+    second: FX_CANDLE_DUST_LOOP_2
+  - first:
+      213: 5072060750323385326
+    second: FX_CANDLE_DUST_LOOP_3
+  - first:
+      213: 3791175404178690797
+    second: FX_CANDLE_DUST_LOOP_4
+  - first:
+      213: -7536539310883541960
+    second: FX_CANDLE_DUST_LOOP_5
+  - first:
+      213: 8861929173533495956
+    second: FX_CANDLE_DUST_LOOP_6
+  - first:
+      213: 5852928453206465263
+    second: FX_CANDLE_DUST_LOOP_7
+  - first:
+      213: 2401401600794588615
+    second: FX_CANDLE_DUST_LOOP_8
+  - first:
+      213: -5908362922285087878
+    second: FX_CANDLE_DUST_LOOP_9
+  - first:
+      213: -654209505074344932
+    second: FX_CANDLE_DUST_LOOP_10
+  - first:
+      213: -4136809464575456796
+    second: FX_CANDLE_DUST_LOOP_11
+  - first:
+      213: 5987546908779230447
+    second: FX_CANDLE_DUST_LOOP_12
+  - first:
+      213: -5523328382413531587
+    second: FX_CANDLE_DUST_LOOP_13
+  - first:
+      213: -4346477346985260452
+    second: FX_CANDLE_DUST_LOOP_14
+  - first:
+      213: 7449628882824468653
+    second: FX_CANDLE_DUST_LOOP_15
+  - first:
+      213: 3524846401186350242
+    second: FX_CANDLE_DUST_LOOP_16
+  - first:
+      213: -917851721769712635
+    second: FX_CANDLE_DUST_LOOP_17
+  - first:
+      213: -404992342189838431
+    second: FX_CANDLE_DUST_LOOP_18
+  - first:
+      213: 5237747394800666082
+    second: FX_CANDLE_DUST_LOOP_19
+  - first:
+      213: -1475174213537935490
+    second: FX_CANDLE_DUST_LOOP_20
+  - first:
+      213: -4107140904123139649
+    second: FX_CANDLE_DUST_LOOP_21
+  - first:
+      213: -1929922999162722744
+    second: FX_CANDLE_DUST_LOOP_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_0
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1098
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 307d7d4d00652eae0800000000000000
+      internalID: -1521559162526902525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_1
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1091
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 530a473ac0a316770800000000000000
+      internalID: 8602220589210705973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_2
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 1076
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d03bc85078757b20800000000000000
+      internalID: 3131541539827429592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_3
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 167
+        width: 885
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee30a362164936640800000000000000
+      internalID: 5072060750323385326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_4
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 1068
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de2d44f81f5fc9430800000000000000
+      internalID: 3791175404178690797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_5
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1062
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ce4035d65d86790800000000000000
+      internalID: -7536539310883541960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_6
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 808
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492922d71a5ebfa70800000000000000
+      internalID: 8861929173533495956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_7
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 781
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fead5250b67c93150800000000000000
+      internalID: 5852928453206465263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_8
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 759
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c57a62680e735120800000000000000
+      internalID: 2401401600794588615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_9
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 745
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a73cb1dd937410ea0800000000000000
+      internalID: -5908362922285087878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_10
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 723
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1c0c59dbe7cbe6f0800000000000000
+      internalID: -654209505074344932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_11
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 672
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e98180b5b91796c0800000000000000
+      internalID: -4136809464575456796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_12
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 675
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe436cda03a081350800000000000000
+      internalID: 5987546908779230447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_13
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 599
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d36986c99123953b0800000000000000
+      internalID: -5523328382413531587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_14
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 562
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5a49aca1e53ea3c0800000000000000
+      internalID: -4346477346985260452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_15
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 472
+        width: 28
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da81e35cff5626760800000000000000
+      internalID: 7449628882824468653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_16
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 537
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a4c68e5025cae030800000000000000
+      internalID: 3524846401186350242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_17
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 191
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5048f67d8b22343f0800000000000000
+      internalID: -917851721769712635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_18
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 186
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1af650b4c9d216af0800000000000000
+      internalID: -404992342189838431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_19
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 180
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e5425a318730b840800000000000000
+      internalID: 5237747394800666082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_20
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 178
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f414c5ed0278be0800000000000000
+      internalID: -1475174213537935490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_21
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 159
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb97347bb118007c0800000000000000
+      internalID: -4107140904123139649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX_CANDLE_DUST_LOOP_22
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 181
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 846ac07e1498735e0800000000000000
+      internalID: -1929922999162722744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FX_CANDLE_DUST_LOOP_0: -1521559162526902525
+      FX_CANDLE_DUST_LOOP_1: 8602220589210705973
+      FX_CANDLE_DUST_LOOP_10: -654209505074344932
+      FX_CANDLE_DUST_LOOP_11: -4136809464575456796
+      FX_CANDLE_DUST_LOOP_12: 5987546908779230447
+      FX_CANDLE_DUST_LOOP_13: -5523328382413531587
+      FX_CANDLE_DUST_LOOP_14: -4346477346985260452
+      FX_CANDLE_DUST_LOOP_15: 7449628882824468653
+      FX_CANDLE_DUST_LOOP_16: 3524846401186350242
+      FX_CANDLE_DUST_LOOP_17: -917851721769712635
+      FX_CANDLE_DUST_LOOP_18: -404992342189838431
+      FX_CANDLE_DUST_LOOP_19: 5237747394800666082
+      FX_CANDLE_DUST_LOOP_2: 3131541539827429592
+      FX_CANDLE_DUST_LOOP_20: -1475174213537935490
+      FX_CANDLE_DUST_LOOP_21: -4107140904123139649
+      FX_CANDLE_DUST_LOOP_22: -1929922999162722744
+      FX_CANDLE_DUST_LOOP_3: 5072060750323385326
+      FX_CANDLE_DUST_LOOP_4: 3791175404178690797
+      FX_CANDLE_DUST_LOOP_5: -7536539310883541960
+      FX_CANDLE_DUST_LOOP_6: 8861929173533495956
+      FX_CANDLE_DUST_LOOP_7: 5852928453206465263
+      FX_CANDLE_DUST_LOOP_8: 2401401600794588615
+      FX_CANDLE_DUST_LOOP_9: -5908362922285087878
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
