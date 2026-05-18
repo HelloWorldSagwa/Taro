@@ -18,6 +18,15 @@ Do not generate these yet. This list defines the slots the MVP art pass must fil
 | P0 | `BG_HOME_TABLE_16X9` | 1 | opaque PNG | Home table backplate. |
 | P0 | `BG_RITUAL_DAILY_TABLE_16X9` | 1 | opaque PNG | Daily card ritual backplate. |
 | P0 | `BG_RESULT_DAILY_TABLE_16X9` | 1 | opaque PNG | Reading result backplate. |
+| P0 | `MASTER_LUNA_IDLE_CALM` | 1 | transparent PNG | Default animated idle sprite. Generate on #00FF00 and remove chroma key. |
+| P0 | `MASTER_LUNA_IDLE_BLINK` | 1 | transparent PNG | Blink replacement frame, same silhouette as idle. Generate on #00FF00 and remove chroma key. |
+| P0 | `MASTER_LUNA_SMILE` | 1 | transparent PNG | Welcome/smile expression sprite. Generate on #00FF00 and remove chroma key. |
+| P0 | `MASTER_LUNA_FOCUSED` | 1 | transparent PNG | Listening/focused expression sprite. Generate on #00FF00 and remove chroma key. |
+| P0 | `MASTER_LUNA_REVEAL_GESTURE` | 1 | transparent PNG | Card reveal gesture pose, gaze and hand toward table. Generate on #00FF00 and remove chroma key. |
+| P0 | `MASTER_LUNA_REASSURANCE` | 1 | transparent PNG | Gentle reassurance pose for softer readings. Generate on #00FF00 and remove chroma key. |
+| P0 | `MASTER_LUNA_SERIOUS` | 1 | transparent PNG | Result/certain expression sprite. Generate on #00FF00 and remove chroma key. |
+| P0 | `FX_MASTER_AURA_IDLE` | 1 | transparent PNG | Subtle master aura behind portrait. Generate on #00FF00 and remove chroma key. |
+| P0 | `FX_MASTER_AURA_REVEAL` | 1 | transparent PNG | Stronger reveal aura behind portrait. Generate on #00FF00 and remove chroma key. |
 | P1 | `CARD_MAJOR_00_FOOL_FACE` | 1 | opaque PNG | Prototype card face. |
 | P1 | `CARD_MAJOR_01_MAGICIAN_FACE` | 1 | opaque PNG | Prototype card face. |
 | P1 | `CARD_MAJOR_06_LOVERS_FACE` | 1 | opaque PNG | Prototype card face. |
@@ -94,6 +103,30 @@ Blank 9-slice profile form panel frame for Korean game UI, translucent dark viol
 
 ```text
 Half-body young adult tarot master Luna for JRPG tarot game, consistent moon-silver hair with soft violet shadows, clear calm eyes, crescent gold jewelry, black-violet sleeves, rose-gold tarot accents, focused expression, one hand gently guiding an unseen card lane to the right, theatrical but warm, polished 2D game character illustration, left-facing screen composition, face and hands fully visible, solid chroma key green background #00FF00, no text, no letters, no watermark, no green jewelry, no green particles, no cast shadow on background
+```
+
+`MASTER_LUNA_IDLE_CALM`
+
+```text
+Half-body young adult tarot master Luna for JRPG tarot game, consistent moon-silver hair with soft violet shadows, clear calm eyes, crescent gold jewelry, black-violet sleeves, rose-gold tarot accents, calm idle expression, hands relaxed near tarot deck height, theatrical but warm, polished 2D game character illustration, left-column screen composition, face and hands fully visible, solid chroma key green background #00FF00, no text, no letters, no watermark, no green jewelry, no green particles, no cast shadow on background
+```
+
+`MASTER_LUNA_IDLE_BLINK`
+
+```text
+Same character, costume, pose, silhouette, lighting, and framing as MASTER_LUNA_IDLE_CALM, but with eyes gently closed for a natural blink frame, polished 2D JRPG tarot master sprite, solid chroma key green background #00FF00, no text, no letters, no watermark, no green jewelry, no green particles, no cast shadow on background
+```
+
+`MASTER_LUNA_SMILE`
+
+```text
+Half-body young adult tarot master Luna for JRPG tarot game, same identity as idle sprite, gentle welcoming smile, one hand slightly open toward the viewer, moon-silver hair, black-violet robe, antique gold crescent jewelry, warm candle-gold rim light, polished 2D game character illustration, left-column screen composition, solid chroma key green background #00FF00, no text, no letters, no watermark, no green object parts
+```
+
+`MASTER_LUNA_REVEAL_GESTURE`
+
+```text
+Half-body young adult tarot master Luna for JRPG tarot game, same identity and costume, focused reveal gesture, one hand extended toward an unseen tarot card lane to the right, eyes following the card, subtle dramatic confidence, moon-silver and candle-gold rim light, polished 2D game character illustration, left-column screen composition, solid chroma key green background #00FF00, no text, no letters, no watermark, no green object parts
 ```
 
 `UI_DIALOGUE_BOX_JRPG_9SLICE`

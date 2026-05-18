@@ -12,7 +12,6 @@ namespace Arcanum.Scenes
 {
     public sealed class ReadingResultController : MonoBehaviour
     {
-        private DialogueRunner dialogueRunner;
         private bool initialized;
 
         private void Awake()
@@ -33,7 +32,8 @@ namespace Arcanum.Scenes
             var profile = ProfileSession.Current;
             var canvas = ArcanumUiFactory.CreateCanvas("ReadingResultCanvas");
             ArcanumUiFactory.CreatePanel(canvas.transform, "Background", Vector2.zero, Vector2.one, ArcanumUiFactory.StageBlack);
-            TarotMasterPresenter.Create(canvas.GetComponent<RectTransform>()).SetExpression("certain");
+            var master = TarotMasterPresenter.Create(canvas.GetComponent<RectTransform>());
+            master.PlayResultEmphasis();
 
             var cardPanel = ArcanumUiFactory.CreatePanel(canvas.transform, "Center_SelectedCardStage", ArcanumUiFactory.CenterColumnAnchorMin, ArcanumUiFactory.CenterColumnAnchorMax, ArcanumUiFactory.PanelGlass);
             var cardView = TarotCardView.Create(cardPanel, card, true);
@@ -82,13 +82,7 @@ namespace Arcanum.Scenes
 
         private void CreateDialogue(Transform parent, string line)
         {
-            var dialogue = ArcanumUiFactory.CreateDialogueBox(parent, "루나", string.Empty, out var text);
-            dialogueRunner = dialogue.gameObject.AddComponent<DialogueRunner>();
-            dialogueRunner.Bind(text);
-            dialogueRunner.Show(line);
-
-            var button = dialogue.gameObject.AddComponent<Button>();
-            button.onClick.AddListener(dialogueRunner.Complete);
+            ArcanumUiFactory.CreateDialogueBox(parent, "루나", line, out _);
         }
     }
 }

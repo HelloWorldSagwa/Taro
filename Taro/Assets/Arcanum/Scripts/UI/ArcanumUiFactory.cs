@@ -1,3 +1,4 @@
+using Arcanum.Master;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
@@ -112,6 +113,16 @@ namespace Arcanum.UI
             prompt.rectTransform.anchorMax = new Vector2(0.97f, 0.22f);
             prompt.rectTransform.offsetMin = Vector2.zero;
             prompt.rectTransform.offsetMax = Vector2.zero;
+
+            var runner = dialogue.gameObject.AddComponent<DialogueRunner>();
+            runner.Bind(lineText);
+            runner.TypingStarted += () => TarotMasterPresenter.Current?.BeginSpeaking();
+            runner.TypingCompleted += () => TarotMasterPresenter.Current?.EndSpeaking();
+            runner.Show(line);
+
+            var clickTarget = dialogue.gameObject.AddComponent<Button>();
+            clickTarget.transition = Selectable.Transition.None;
+            clickTarget.onClick.AddListener(runner.Complete);
 
             return dialogue;
         }

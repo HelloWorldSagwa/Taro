@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,9 @@ namespace Arcanum.UI
 
         private Coroutine activeRoutine;
         private string currentLine = string.Empty;
+
+        public event Action TypingStarted;
+        public event Action TypingCompleted;
 
         public void Bind(Text text)
         {
@@ -41,10 +45,20 @@ namespace Arcanum.UI
             {
                 target.text = currentLine;
             }
+
+            TypingCompleted?.Invoke();
         }
 
         private IEnumerator TypeLine(string line)
         {
+            if (target == null)
+            {
+                activeRoutine = null;
+                TypingCompleted?.Invoke();
+                yield break;
+            }
+
+            TypingStarted?.Invoke();
             target.text = string.Empty;
 
             for (var i = 0; i < line.Length; i++)
@@ -54,6 +68,7 @@ namespace Arcanum.UI
             }
 
             activeRoutine = null;
+            TypingCompleted?.Invoke();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Arcanum.Scenes
     {
         private Text promptText;
         private Text guidanceText;
+        private TarotMasterPresenter masterPresenter;
         private readonly List<TarotCardView> cardViews = new List<TarotCardView>();
         private bool initialized;
         private bool selectionLocked;
@@ -36,7 +37,8 @@ namespace Arcanum.Scenes
 
             var canvas = ArcanumUiFactory.CreateCanvas("RitualCanvas");
             ArcanumUiFactory.CreatePanel(canvas.transform, "Background", Vector2.zero, Vector2.one, ArcanumUiFactory.StageBlack);
-            TarotMasterPresenter.Create(canvas.GetComponent<RectTransform>()).SetExpression("focused");
+            masterPresenter = TarotMasterPresenter.Create(canvas.GetComponent<RectTransform>());
+            masterPresenter.SetExpression("focused");
 
             var table = ArcanumUiFactory.CreatePanel(canvas.transform, "Center_CardTable", ArcanumUiFactory.CenterColumnAnchorMin, ArcanumUiFactory.CenterColumnAnchorMax, ArcanumUiFactory.PanelGlass);
             promptText = ArcanumUiFactory.CreateText(table, "Prompt", "\uC2DC\uC120\uC774 \uBA38\uBB34\uB294 \uCE74\uB4DC\uB97C \uC120\uD0DD\uD558\uC138\uC694", 34, TextAnchor.MiddleCenter, ArcanumUiFactory.Gold);
@@ -102,6 +104,7 @@ namespace Arcanum.Scenes
 
             selectionLocked = true;
             ReadingSession.Select(card);
+            masterPresenter?.PlayRevealGesture();
             view.Reveal();
             EnlargeSelectedCard(view.GetComponent<RectTransform>());
             DisableOtherCards(view);

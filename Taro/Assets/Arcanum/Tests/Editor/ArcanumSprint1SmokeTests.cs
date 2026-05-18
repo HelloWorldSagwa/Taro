@@ -1,7 +1,9 @@
 using System.Linq;
+using Arcanum.Master;
 using Arcanum.Data;
 using Arcanum.Profile;
 using Arcanum.Reading;
+using Arcanum.UI;
 using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
@@ -18,6 +20,19 @@ namespace Arcanum.Tests.Editor
             "Assets/Arcanum/Scenes/HomeTable.unity",
             "Assets/Arcanum/Scenes/Ritual.unity",
             "Assets/Arcanum/Scenes/ReadingResult.unity"
+        };
+
+        private static readonly string[] RequiredTarotMasterMotionResourceNames =
+        {
+            "MASTER_LUNA_IDLE_CALM",
+            "MASTER_LUNA_IDLE_BLINK",
+            "MASTER_LUNA_SMILE",
+            "MASTER_LUNA_FOCUSED",
+            "MASTER_LUNA_REVEAL_GESTURE",
+            "MASTER_LUNA_REASSURANCE",
+            "MASTER_LUNA_SERIOUS",
+            "FX_MASTER_AURA_IDLE",
+            "FX_MASTER_AURA_REVEAL"
         };
 
         [Test]
@@ -137,6 +152,40 @@ namespace Arcanum.Tests.Editor
             foreach (var scenePath in RequiredScenePaths)
             {
                 Assert.That(enabledBuildScenePaths, Does.Contain(scenePath));
+            }
+        }
+
+        [Test]
+        public void TarotMasterPresenter_AcceptsSprintOneMotionStates()
+        {
+            var canvas = ArcanumUiFactory.CreateCanvas("TarotMasterPresenterSmokeCanvas");
+            try
+            {
+                var presenter = TarotMasterPresenter.Create(canvas.GetComponent<RectTransform>());
+
+                Assert.DoesNotThrow(() => presenter.SetExpression("waiting"));
+                Assert.DoesNotThrow(() => presenter.SetExpression("focused"));
+                Assert.DoesNotThrow(() => presenter.BeginSpeaking());
+                Assert.DoesNotThrow(() => presenter.EndSpeaking());
+                Assert.DoesNotThrow(() => presenter.PlayRevealGesture());
+                Assert.DoesNotThrow(() => presenter.PlayResultEmphasis());
+            }
+            finally
+            {
+                Object.DestroyImmediate(canvas.gameObject);
+            }
+        }
+
+        [Test]
+        public void TarotMasterMotionResourceFolder_DocumentsRequiredRuntimeNames()
+        {
+            var readmePath = "Assets/Arcanum/Resources/Art/Masters/README.md";
+            var readme = AssetDatabase.LoadAssetAtPath<TextAsset>(readmePath);
+
+            Assert.That(readme, Is.Not.Null, readmePath);
+            foreach (var assetName in RequiredTarotMasterMotionResourceNames)
+            {
+                Assert.That(readme.text, Does.Contain(assetName), $"{assetName} must be documented for the GPT-Image-2 import pass.");
             }
         }
 
