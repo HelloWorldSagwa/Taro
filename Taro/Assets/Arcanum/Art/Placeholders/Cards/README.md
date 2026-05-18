@@ -1,0 +1,3 @@
+# Card Placeholders
+
+Reserved IDs: `CARD_BACK_DEFAULT`, `CARD_MAJOR_00_FOOL_FACE` through `CARD_MAJOR_21_WORLD_FACE`, plus `FRAME_TAROT_DEFAULT`.
